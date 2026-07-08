@@ -1,8 +1,10 @@
-from sqlalchemy import Column, Integer
+from sqlalchemy import Column, Integer, Boolean, String
 from .database import Base
 
-class Number(Base):
-    __tablename__ = "numbers"
+class Income(Base):
+    __tablename__ = "Income"
 
-    id = Column(Integer, primary_key=True, index=True)
-    value = Column(Integer)
+    income_id = Column(Integer, primary_key=True, index=True)
+    income_name = Column(String)
+    income_value = Column(Integer)
+    is_deleted = Column(Boolean, default=False)
